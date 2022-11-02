@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SPUR CORPORATION GALLERY</title>
+          <img src="image/my logo.jpeg" alt="my logo" width="150" height="70" > 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href=" Style.css" type="text/css"/>
+        <style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+    </head>
+    <body>
+         <nav>
+            
+               <nav class="topnav">
+            <ul>
+        <a href="homepage.html"> Homepage </a>
+        <a href="about-us.html">About us</a>
+        <a href="our-works.html ">Our Work</a>
+        <a href="get-involved.html">Get involved</a>
+         <a href="contact-us.html">Contact Us</a>  
+          <a href="reference.html">Reference</a>
+    </ul>
+         </nav>
+            
+   <h2 style="text-align:center">Slideshow Spur Gallery</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="image/spur2.jpeg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="image/spur3.jpeg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="image/spur7.jpeg"style="width:90%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="image/spur4.jpeg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="image/spur5.jpeg" style="width:50%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="image/spur6.jpeg" style="width:90%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="image/spur2.jpeg" style="width:100%" onclick="currentSlide(1)" alt="spur the Glen entrance">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/spur3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Combo original spur">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/spur7.jpeg" style="width:100%" onclick="currentSlide(3)" alt="all in one">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/spur4.jpeg" style="width:100%" onclick="currentSlide(4)" alt="special spuur">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/spur5.jpeg" style="width:100%" onclick="currentSlide(5)" alt="cake from the House">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="image/spur6.jpeg" style="width:100%" onclick="currentSlide(6)" alt="lemon steak">
+    </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>   
+
+<br>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/8TuvpfUm4XA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/lvuRs3yqqMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
+              
+                 
+                     
+           </body>
+    <br>
+    <footer>
+         
+         <p align="center">© 2022 Spur Corporation</p>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <ul class="socials">
+               <a href="https://www.facebook.com/SpurSteakRanches/"><i class="fa fa-facebook"></i></a> 
+               <li><a href="https://twitter.com/spurrestaurant?lang=fr"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.spursteakranches.com/za"><i class="fa fa-google"></i></a></li>
+               <li><a href="https://www.youtube.com/embed/lvuRs3yqqMk"><i class="fa fa-youtube"></i></a></li>
+               <li><a href="https://www.instagram.com/spursteakranches/"><i class="fa fa-instagram"></i></a></li>
+               </ul> 
+         <p align="right">Made by Donald_Billionaire</p>
+         
+     </footer> 
+</html>
